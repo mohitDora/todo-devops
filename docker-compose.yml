@@ -1,0 +1,60 @@
+version: '3.8'
+
+services:
+  # Frontend Service (Vite + React)
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    container_name: vite-react-app
+    ports:
+      - "5173:5173"
+    volumes:
+      - ./frontend:/app
+      - /app/node_modules
+    environment:
+      - VITE_BACKEND_URL=http://backend:5000  # Using service name for internal communication
+    depends_on:
+      - backend
+    networks:
+      - app-network
+
+  # Backend Service (Node.js)
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: node-app
+    ports:
+      - "5000:5000"
+    volumes:
+      - ./backend:/app
+      - /app/node_modules
+    environment:
+      - MONGO_URI=mongodb://mongo:27017/  # Using service name for internal communication
+      - FRONTEND_URL=http://frontend:5173  # Using service name for internal communication
+      - PORT=5000
+      - JWT_SECRET=thisisjwtsecretthisisjwtsecretthisisjwtsecretthisisjwtsecret
+    depends_on:
+      - mongo
+    networks:
+      - app-network
+
+  # Database Service (MongoDB)
+  mongo:
+    image: mongo:latest
+    container_name: mongo
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongodb_data:/data/db
+    networks:
+      - app-network
+
+volumes:
+  mongodb_data:
+  node_modules:
+
+networks:
+  app-network:
+    driver: bridge
