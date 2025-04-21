@@ -1,8 +1,7 @@
 import axios from "axios";
 
-const BACKEND_URL = import.meta.env.VITE_BACKEND_URL;
-const TODO_API_BASE = `${BACKEND_URL}/api/todos`;
-const AUTH_API_BASE = `${BACKEND_URL}/api/auth`;
+const TODO_API_BASE = `/api/todos`;
+const AUTH_API_BASE = `/api/auth`;
 
 // Helper to get auth headers
 const authHeader = () => {

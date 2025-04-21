@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
         - name: frontend
-          image: <to be Added>
+          image: mohitdora21/todo-frontend:latest
           ports:
             - containerPort: 80
           resources:

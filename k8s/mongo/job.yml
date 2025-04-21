@@ -13,8 +13,7 @@ spec:
           args:
             - |
               sleep 10;
-              mongo --host mongodb-0.mongodb:27017 \
-              -u admin -p password --authenticationDatabase admin <<EOF
+              mongosh --host mongodb-0.mongodb:27017 <<EOF
               rs.initiate({
                 _id: "rs0",
                 members: [
@@ -25,4 +24,3 @@ spec:
               });
               EOF
       restartPolicy: OnFailure
-      backoffLimit: 4
