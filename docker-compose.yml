@@ -30,21 +30,6 @@ services:
     networks:
       - app-network
 
-  # Nginx Reverse Proxy
-  nginx:
-    image: nginx:alpine
-    ports:
-      - "80:80"
-      - "443:443"  # For HTTPS (optional)
-    volumes:
-      - ./nginx.conf:/etc/nginx/nginx.conf
-      - ./ssl:/etc/nginx/ssl  # For HTTPS certs (optional)
-    depends_on:
-      - frontend
-      - backend
-    networks:
-      - app-network
-
   # MongoDB (unchanged)
   mongo:
     image: mongo:latest

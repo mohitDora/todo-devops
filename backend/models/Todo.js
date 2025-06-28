@@ -1,4 +1,4 @@
-const mongoose = require("mongoose");
+const mongoose = require('mongoose');
 
 const TodoSchema = new mongoose.Schema(
   {
@@ -12,11 +12,11 @@ const TodoSchema = new mongoose.Schema(
     },
     userId: {
       type: mongoose.Schema.Types.ObjectId,
-      ref: "User",
+      ref: 'User',
       required: true,
     },
   },
   { timestamps: true }
 );
 
-module.exports = mongoose.model("Todo", TodoSchema);
+module.exports = mongoose.model('Todo', TodoSchema);

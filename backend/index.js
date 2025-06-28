@@ -7,16 +7,20 @@ const authRoutes = require('./routes/auth');
 const todoRoutes = require('./routes/todo');
 
 const app = express();
-app.use(cors({
+app.use(
+  cors({
     origin: process.env.FRONTEND_URL,
     credentials: true,
-    methods: ['GET', 'POST', 'PUT', 'DELETE']
-}));
+    methods: ['GET', 'POST', 'PUT', 'DELETE'],
+  })
+);
 app.use(express.json());
 
 // MongoDB connection
-mongoose.connect(process.env.MONGO_URI).then(() => console.log('MongoDB connected'))
-  .catch(err => console.error(err));
+mongoose
+  .connect(process.env.MONGO_URI)
+  .then(() => console.log('MongoDB connected'))
+  .catch((err) => console.error(err));
 
 // Routes
 app.use('/api/todos', todoRoutes);
