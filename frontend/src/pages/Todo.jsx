@@ -1,8 +1,8 @@
-import { useEffect, useState } from "react";
-import { getTodos, createTodo, deleteTodo, toggleTodo } from "../lib/api";
-import TodoForm from "@/components/shared/TodoForm";
-import TodoList from "@/components/shared/TodoList";
-import { Navbar } from "@/components/shared/Navbar";
+import { useEffect, useState } from 'react';
+import { getTodos, createTodo, deleteTodo, toggleTodo } from '../lib/api';
+import TodoForm from '@/components/shared/TodoForm';
+import TodoList from '@/components/shared/TodoList';
+import { Navbar } from '@/components/shared/Navbar';
 
 export default function Todo() {
   const [todos, setTodos] = useState([]);

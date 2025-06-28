@@ -1,15 +1,15 @@
-import { useState } from "react";
-import { Button } from "../ui/button";
-import { Input } from "../ui/input";
+import { useState } from 'react';
+import { Button } from '../ui/button';
+import { Input } from '../ui/input';
 
 export default function TodoForm({ onAdd }) {
-  const [text, setText] = useState("");
+  const [text, setText] = useState('');
 
   const handleSubmit = (e) => {
     e.preventDefault();
     if (!text.trim()) return;
     onAdd(text);
-    setText("");
+    setText('');
   };
 
   return (

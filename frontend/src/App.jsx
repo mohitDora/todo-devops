@@ -1,8 +1,8 @@
-import { Routes, Route } from "react-router";
-import Signup from "./pages/Signup";
-import Login from "./pages/Login";
-import AuthRoute from "./components/auth/AuthRoute";
-import Todo from "./pages/Todo";
+import { Routes, Route } from 'react-router';
+import Signup from './pages/Signup';
+import Login from './pages/Login';
+import AuthRoute from './components/auth/AuthRoute';
+import Todo from './pages/Todo';
 
 function App() {
   return (

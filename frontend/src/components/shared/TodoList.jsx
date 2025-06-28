@@ -5,9 +5,9 @@ import {
   TableHead,
   TableHeader,
   TableRow,
-} from "@/components/ui/table";
-import { Button } from "@/components/ui/button";
-import { Check, Trash, X } from "lucide-react";
+} from '@/components/ui/table';
+import { Button } from '@/components/ui/button';
+import { Check, Trash, X } from 'lucide-react';
 
 export default function TodoList({ todos, onToggle, onDelete }) {
   return (
@@ -30,15 +30,15 @@ export default function TodoList({ todos, onToggle, onDelete }) {
               key={todo._id}
               className={
                 todo.completed
-                  ? "bg-green-50 hover:bg-green-100"
-                  : "hover:bg-gray-50"
+                  ? 'bg-green-50 hover:bg-green-100'
+                  : 'hover:bg-gray-50'
               }
             >
               <TableCell
                 className={`font-medium ${
                   todo.completed
-                    ? "text-gray-500 line-through"
-                    : "text-gray-800"
+                    ? 'text-gray-500 line-through'
+                    : 'text-gray-800'
                 }`}
               >
                 {todo.text}
@@ -47,17 +47,17 @@ export default function TodoList({ todos, onToggle, onDelete }) {
                 <span
                   className={`inline-flex items-center rounded-full px-3 py-1 text-xs font-medium ${
                     todo.completed
-                      ? "bg-green-100 text-green-800"
-                      : "bg-yellow-100 text-yellow-800"
+                      ? 'bg-green-100 text-green-800'
+                      : 'bg-yellow-100 text-yellow-800'
                   }`}
                 >
-                  {todo.completed ? "Completed" : "Pending"}
+                  {todo.completed ? 'Completed' : 'Pending'}
                 </span>
               </TableCell>
               <TableCell className="text-right space-x-2">
                 {todo.completed ? (
                   <Button
-                    variant={todo.completed ? "secondary" : "outline"}
+                    variant={todo.completed ? 'secondary' : 'outline'}
                     size="sm"
                     onClick={() => onToggle(todo._id)}
                     className="h-8 w-8 p-0"
@@ -67,7 +67,7 @@ export default function TodoList({ todos, onToggle, onDelete }) {
                   </Button>
                 ) : (
                   <Button
-                    variant={todo.completed ? "secondary" : "outline"}
+                    variant={todo.completed ? 'secondary' : 'outline'}
                     size="sm"
                     onClick={() => onToggle(todo._id)}
                     className="h-8 w-8 p-0"

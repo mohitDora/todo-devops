@@ -1,6 +1,6 @@
-import AuthForm from "@/components/shared/AuthForm";
-import { login as loginApi } from "@/lib/api";
-import { useAuth } from "@/context/AuthContext";
+import AuthForm from '@/components/shared/AuthForm';
+import { login as loginApi } from '@/lib/api';
+import { useAuth } from '@/context/AuthContext';
 
 export default function Login() {
   const { login } = useAuth();
@@ -10,7 +10,7 @@ export default function Login() {
       const res = await loginApi(data);
       login(res.data.token);
     } catch (err) {
-      alert(err.response?.data?.error || "Login failed");
+      alert(err.response?.data?.error || 'Login failed');
     }
   };
 

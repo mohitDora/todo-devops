@@ -1,6 +1,6 @@
-import AuthForm from "@/components/shared/AuthForm";
-import { register } from "@/lib/api";
-import { useAuth } from "@/context/AuthContext";
+import AuthForm from '@/components/shared/AuthForm';
+import { register } from '@/lib/api';
+import { useAuth } from '@/context/AuthContext';
 
 export default function Signup() {
   const { login } = useAuth();
@@ -10,7 +10,7 @@ export default function Signup() {
       const res = await register(data);
       login(res.data.token);
     } catch (err) {
-      alert(err.response?.data?.error || "Signup failed");
+      alert(err.response?.data?.error || 'Signup failed');
     }
   };
 

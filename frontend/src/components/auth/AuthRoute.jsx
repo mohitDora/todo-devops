@@ -1,5 +1,5 @@
-import { Navigate } from "react-router";
-import { useAuth } from "@/context/AuthContext";
+import { Navigate } from 'react-router';
+import { useAuth } from '@/context/AuthContext';
 
 export default function AuthRoute({ children }) {
   const { isAuthenticated } = useAuth();
